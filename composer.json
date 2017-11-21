@@ -21,7 +21,7 @@
   "autoload": {
     "psr-4": {
       "Framework\\S3FU\\": "src/",
-      "Framework\\S3FU\\Configuration": "config/"
+      "Framework\\S3FU\\Configuration\\": "config/"
     }
   },
   "autoload-dev": {
