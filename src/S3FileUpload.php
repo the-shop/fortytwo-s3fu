@@ -23,16 +23,18 @@ class S3FileUpload extends FileUploader
         $client = $this->getClient();
 
         $bucket = $this->getApplication()
-            ->getConfiguration()
-            ->getPathValue('env.S3_BUCKET');
+                       ->getConfiguration()
+                       ->getPathValue('env.S3_BUCKET');
 
         try {
-            $response = $client->putObject([
-                'Bucket' => $bucket,
-                'Key' => $fileName,
-                'SourceFile' => $filePath,
-                'ACL' => 'public-read'
-            ]);
+            $response = $client->putObject(
+                [
+                    'Bucket' => $bucket,
+                    'Key' => $fileName,
+                    'SourceFile' => $filePath,
+                    'ACL' => 'public-read'
+                ]
+            );
         } catch (S3Exception $e) {
             throw new \Exception('There was an error uploading the file.', 400);
         }
