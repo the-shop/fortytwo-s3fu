@@ -15,6 +15,7 @@ class DummyS3Client
 
     /**
      * DummyS3Client constructor.
+     *
      * @param array $arguments
      */
     public function __construct(array $arguments = [])
@@ -24,6 +25,7 @@ class DummyS3Client
 
     /**
      * @param array $args
+     *
      * @return DummyS3Response
      */
     public function putObject(array $args = [])
