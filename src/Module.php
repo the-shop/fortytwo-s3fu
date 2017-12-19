@@ -11,9 +11,9 @@ use Framework\Base\Module\BaseModule;
 class Module extends BaseModule
 {
     /**
-     *
+     * @inheritdoc
      */
-    public function bootstrap()
+    public function loadConfig()
     {
         // Let's read all files from module config folder and set to Configuration
         $configDirPath = realpath(dirname(__DIR__)) . '/config/';
